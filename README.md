@@ -74,11 +74,11 @@
 <td width="33%" align="center">
 
 <a href="https://drive.google.com/file/d/1UYl_p1Z71cfwfULbZFRECRHw0s148mel/view?usp=drive_link">
-<img src="docs/screenshots/cost-simulator.png" width="100%" alt="Screen Recorded Demo Preview" />
+<img src="docs/screenshots/cost-simulator.png" width="100%" alt="Demo Video Preview" />
 </a>
 <br/>
 <a href="https://drive.google.com/file/d/1UYl_p1Z71cfwfULbZFRECRHw0s148mel/view?usp=drive_link">
-<img src="https://img.shields.io/badge/▶_Screen_Recorded_Demo-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" />
+<img src="https://img.shields.io/badge/▶Demo_Video-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" />
 </a>
 
 </td>
