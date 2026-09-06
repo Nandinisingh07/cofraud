@@ -234,7 +234,10 @@ export default function ModelInsights() {
                     <li><strong>Algorithm</strong>: Gradient Boosted Risk Classifier</li>
                     <li><strong>Graph features</strong>: Modularity clustering over device_id/IP/address linkages</li>
                     <li><strong>Temporal partition</strong>: Train period (Days 0-45), Test period (Days 46-60)</li>
-                    <li><strong>Precision / Recall / F1</strong>: {(metrics.precision * 100).toFixed(1)}% / {(metrics.recall * 100).toFixed(1)}% / {(metrics.f1_score * 100).toFixed(1)}% at threshold {metrics.threshold_used}</li>
+                    <li><strong>REVIEW Tier (0.26) P / R / F1</strong>: {(metrics.precision * 100).toFixed(1)}% / {(metrics.recall * 100).toFixed(1)}% / {(metrics.f1_score * 100).toFixed(1)}%</li>
+                    {metrics.hold_metrics && (
+                      <li><strong>HOLD Tier (0.60) P / R / F1</strong>: {(metrics.hold_metrics.precision * 100).toFixed(1)}% / {(metrics.hold_metrics.recall * 100).toFixed(1)}% / {(metrics.hold_metrics.f1_score * 100).toFixed(1)}%</li>
+                    )}
                   </ul>
                 </div>
                 <div>

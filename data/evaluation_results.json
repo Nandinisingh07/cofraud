@@ -1,13 +1,38 @@
 {
-  "threshold_used": 0.5,
-  "precision": 0.23087071240105542,
-  "recall": 0.3779697624190065,
-  "f1_score": 0.28665028665028663,
+  "threshold_used": 0.26,
+  "threshold_label": "at REVIEW threshold (0.26)",
+  "precision": 0.1713171317131713,
+  "recall": 0.4110871130309575,
+  "f1_score": 0.24184667513765354,
   "confusion_matrix": {
-    "true_negative": 27084,
-    "false_positive": 1749,
-    "false_negative": 864,
-    "true_positive": 525
+    "true_negative": 26071,
+    "false_positive": 2762,
+    "false_negative": 818,
+    "true_positive": 571
+  },
+  "review_metrics": {
+    "threshold": 0.26,
+    "precision": 0.1713171317131713,
+    "recall": 0.4110871130309575,
+    "f1_score": 0.24184667513765354,
+    "confusion_matrix": {
+      "true_negative": 26071,
+      "false_positive": 2762,
+      "false_negative": 818,
+      "true_positive": 571
+    }
+  },
+  "hold_metrics": {
+    "threshold": 0.6,
+    "precision": 0.22998673153471916,
+    "recall": 0.3743700503959683,
+    "f1_score": 0.28493150684931506,
+    "confusion_matrix": {
+      "true_negative": 27092,
+      "false_positive": 1741,
+      "false_negative": 869,
+      "true_positive": 520
+    }
   },
   "test_set_size": 30222,
   "test_fraud_count": 1389,

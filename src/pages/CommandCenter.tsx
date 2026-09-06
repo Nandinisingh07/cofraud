@@ -32,11 +32,12 @@ export default function CommandCenter({ onNavigateToQueue, onSelectAccount }: Co
     async function fetchData() {
       try {
         setLoading(true);
-        const [accounts, clusters, queue, metrics] = await Promise.all([
+        const [accounts, clusters, queue, metrics, highestRiskAccounts] = await Promise.all([
           api.getAccounts(),
           api.getClusters(),
           api.getReviewQueue(),
-          api.getModelInsights()
+          api.getModelInsights(),
+          api.getAccounts(undefined, undefined, 6, 'risk_score')
         ]);
 
         // Calculate stats
@@ -56,9 +57,8 @@ export default function CommandCenter({ onNavigateToQueue, onSelectAccount }: Co
         const holdCount = accounts.filter(a => a.risk_tier === "HOLD").length;
         setDistribution({ low: lowCount, review: reviewCount, hold: holdCount });
 
-        // Highest-risk accounts (accounts is already sorted by risk_score DESC by the backend)
-        const recent = accounts.slice(0, 6);
-        setRecentActivity(recent);
+        // Highest-risk accounts panel
+        setRecentActivity(highestRiskAccounts);
       } catch (err) {
         console.error("Error loading command center stats", err);
       } finally {
@@ -166,7 +166,7 @@ export default function CommandCenter({ onNavigateToQueue, onSelectAccount }: Co
           <div className="text-[24px] font-bold text-slate-300 font-mono mb-1">
             {Math.round(stats.precision * 100)}% / {Math.round(stats.recall * 100)}%
           </div>
-          <p className="text-[12px] text-slate-500">Measured performance on temporal split test set</p>
+          <p className="text-[12px] text-slate-500">At REVIEW threshold (0.26) on temporal split</p>
         </div>
       </div>
 

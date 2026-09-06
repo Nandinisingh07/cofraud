@@ -66,11 +66,13 @@ export const api = {
   getAccounts: async (
     riskTier?: 'LOW' | 'REVIEW' | 'HOLD',
     status?: AccountSchema['status'],
-    limit: number = 100
+    limit: number = 100,
+    sortBy?: string
   ): Promise<AccountSchema[]> => {
     const params = new URLSearchParams();
     if (riskTier) params.set('risk_tier', riskTier);
     if (status) params.set('status', status);
+    if (sortBy) params.set('sort_by', sortBy);
     params.set('limit', String(limit));
     return apiCall(`/accounts?${params.toString()}`);
   },

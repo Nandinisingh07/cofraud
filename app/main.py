@@ -67,7 +67,12 @@ def log_browser_error(error: BrowserError):
 
 
 @app.get("/accounts")
-def list_accounts(risk_tier: str | None = None, status: str | None = None, limit: int = 100):
+def list_accounts(
+    risk_tier: str | None = None,
+    status: str | None = None,
+    sort_by: str | None = None,
+    limit: int = 100,
+):
     conn = get_conn()
     query = "SELECT * FROM accounts WHERE 1=1"
     params = []
@@ -77,7 +82,9 @@ def list_accounts(risk_tier: str | None = None, status: str | None = None, limit
     if status:
         query += " AND status = ?"
         params.append(status)
-    query += " ORDER BY risk_score DESC LIMIT ?"
+    if sort_by == "risk_score":
+        query += " ORDER BY risk_score DESC"
+    query += " LIMIT ?"
     params.append(limit)
     rows = conn.execute(query, params).fetchall()
     conn.close()
