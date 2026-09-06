@@ -49,7 +49,7 @@
 | ⚡ Backend | Live FastAPI Service | https://abuse-ring-sentinel-pvk8.onrender.com |
 | 📡 API Docs | Interactive Swagger Spec | https://abuse-ring-sentinel-pvk8.onrender.com/docs |
 | 🎬 Animated Video | Stylized Intro/Demo | [docs/demo/cofraud-demo.mp4](docs/demo/cofraud-demo.mp4) |
-| 🎬 Screen Recorded Demo | Full Product Walkthrough | [Watch on Google Drive](https://drive.google.com/file/d/1UYl_p1Z71cfwfULbZFRECRHw0s148mel/view?usp=drive_link) |
+| 🎬 Demo Video | Full Product Walkthrough | [Watch on Google Drive](https://drive.google.com/file/d/1UYl_p1Z71cfwfULbZFRECRHw0s148mel/view?usp=drive_link) |
 | 📄 Documentation | Full Project Report | [View on Google Docs](https://docs.google.com/document/d/1XG8c3HZu99KhsskTnaxnFJ9vMprfj0Of/edit?usp=drive_link) |
 
 > ⚠️ **Before submitting:** the frontend's API base URL must point at your *deployed* backend (`VITE_API_BASE_URL`), not `http://localhost:8080`. Test every link above in an incognito window.
